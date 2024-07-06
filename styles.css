@@ -87,9 +87,14 @@ nav .fa{
 @media(max-width: 700px){
   .text-box {
     top: 60%;
+    text-align: center;
   }
   .text-box h1{
     font-size: 35px;
+  }
+  .text-box p{
+    font-size: 22px;
+    line-break: 10px;
   }
   .nav-links ul li{
     padding: 20px;
@@ -177,6 +182,7 @@ nav .fa{
     .footer-content {
         flex-direction: column;
         align-items: left;
+        padding-right: 100px;
     }
 
     .footer-section {
