@@ -98,6 +98,11 @@ nav .fa{
     top: 65%;
     text-align: center;
   }
+  .profile-image {
+    width: 200px; /* Adjust size as needed */
+    height: 200px; /* Ensure the image is a square */
+    background-color: lightblue;
+  }
   .text-box h1{
     font-size: 35px;
   }
@@ -130,11 +135,6 @@ nav .fa{
   .nav-links ul{
     padding: 20px;
   }
-  .profile-image {
-    width: 200px; /* Adjust size as needed */
-    height: 200px; /* Ensure the image is a square */
-    background-color: lightblue;
-}
 }
 
 /* Footer Action */
