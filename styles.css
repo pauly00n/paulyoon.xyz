@@ -131,8 +131,8 @@ nav .fa{
     padding: 20px;
   }
   .profile-image {
-    width: 100px; /* Adjust size as needed */
-    height: 100px; /* Ensure the image is a square */
+    width: 200px; /* Adjust size as needed */
+    height: 200px; /* Ensure the image is a square */
 }
 }
 
