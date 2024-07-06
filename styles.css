@@ -131,11 +131,8 @@ nav .fa{
     padding: 20px;
   }
   .profile-image {
-    width: 200px; /* Adjust size as needed */
-    height: 200px; /* Ensure the image is a square */
-    border-radius: 50%; /* Make the image circular */
-    object-fit: cover; /* Ensure the image covers the area */
-    margin-bottom: 30px; /* Space between the image and the text */
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Ensure the image is a square */
 }
 }
 
