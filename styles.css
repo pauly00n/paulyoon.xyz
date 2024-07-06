@@ -130,10 +130,6 @@ nav .fa{
   .nav-links ul{
     padding: 20px;
   }
-  .profile-image {
-    width: 100px; /* Adjust size as needed */
-    height: 100px; /* Ensure the image is a square */
-}
 }
 
 /* Footer Action */
