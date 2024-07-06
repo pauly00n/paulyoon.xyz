@@ -61,9 +61,6 @@ nav .fa{
     border-radius: 50%; /* Make the image circular */
     object-fit: cover; /* Ensure the image covers the area */
     margin-bottom: 30px; /* Space between the image and the text */
-    max-width: none; /* Ensure the image does not exceed its container width */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    background-color: red; /* Debugging background color */
 }
 
 .text-box{
@@ -101,7 +98,7 @@ nav .fa{
     top: 65%;
     text-align: center;
   }
-  .profile-image {
+  .profile-image{
     width: 200px; /* Adjust size as needed */
     height: 200px; /* Ensure the image is a square */
     background-color: lightblue;
