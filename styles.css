@@ -133,6 +133,7 @@ nav .fa{
   .profile-image {
     width: 200px; /* Adjust size as needed */
     height: 200px; /* Ensure the image is a square */
+    background-color: lightblue;
 }
 }
 
