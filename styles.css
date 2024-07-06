@@ -61,8 +61,6 @@ nav .fa{
     border-radius: 50%; /* Make the image circular */
     object-fit: cover; /* Ensure the image covers the area */
     margin-bottom: 30px; /* Space between the image and the text */
-    max-width: 100%;
-    box-sizing: border-box;
 }
 
 .text-box{
@@ -97,7 +95,7 @@ nav .fa{
 /* For mobile website support on the header menu click action*/
 @media(max-width: 1200px){
   .text-box {
-    top: 50%;
+    top: 65%;
     text-align: center;
   }
   .text-box h1{
