@@ -86,7 +86,7 @@ nav .fa{
 /* For mobile website support on the header menu click action*/
 @media(max-width: 700px){
   .text-box {
-    top: 50%;
+    top: 60%;
   }
   .text-box h1{
     font-size: 35px;
