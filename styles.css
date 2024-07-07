@@ -239,6 +239,7 @@ nav .fa{
     }
     .footer-section h2, .footer-section h3{
       margin-top: 30px;
+      margin-left: 0px;
     }
     .line-break{
       display: none;
