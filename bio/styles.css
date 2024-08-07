@@ -78,15 +78,6 @@ html, body {
   padding: 80px 30px 80px 30px;
 }
 
-/* Profile Image properties - took a lot of tweaking */
-.profile-image {
-    width: 200px; /* Adjust size as needed */
-    height: 200px; /* Ensure the image is a square */
-    border-radius: 50%; /* Make the image circular */
-    object-fit: cover; /* Ensure the image covers the area */
-    margin-bottom: 30px; /* Space between the image and the text */
-}
-
 /* Text box prpoerties */
 .text-box{
   max-width: 900px;
@@ -97,18 +88,18 @@ html, body {
   text-align: left;
 }
 
-.text-box h1{
-  font-size: 40px;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-
 .text-box p{
-  margin: 10px 0 20px;
-  font-size: 26px;
+  margin: 10px 0 30px;
+  font-size: 25px;
   font-weight: 300;
   color: #999;
-  line-height: 1.4;
+  line-height: 1.5;
+}
+
+.text-box h1{
+  font-size: 39px;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .text-box a{
