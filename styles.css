@@ -186,12 +186,11 @@ html, body {
 
 .footer-section{
     flex: 1;
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 .footer-section h2{
     margin-bottom: 10px;
-    margin-left: -20px;
     color: #ccc;
     font-weight: 425;
 }
