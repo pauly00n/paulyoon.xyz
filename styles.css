@@ -170,16 +170,18 @@ html, body {
 
 /* Footer Action */
 .footer{
-    background-color: #1f1f1f;
+    background-color: #2e2e2e;
     padding: 20px;
     display: flex;
-    justify-content: center;
 }
 
 .footer-content{
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 .footer-section{
