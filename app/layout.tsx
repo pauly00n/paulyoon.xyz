@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Paul Yoon | Math Student at Stanford',
-  description: 'Stanford Math undergraduate and former intern at Sundial',
+  title: 'Paul Yoon',
+  description: 'Stanford Mathematics Undergraduate',
   icons: {
     icon: '/favicon.png',
   }
