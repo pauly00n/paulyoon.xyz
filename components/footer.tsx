@@ -12,6 +12,8 @@ export default function Footer() {
           <FooterLink href="mailto:pauljy@stanford.edu">Email</FooterLink>
           <div className="hidden sm:block h-4 w-[1px] bg-muted-foreground/25" />
           <FooterLink href="https://github.com/pauly00n">Github</FooterLink>
+          <div className="hidden sm:block h-4 w-[1px] bg-muted-foreground/25" />
+          <FooterLink href="https://instagram.com/asizns">Instagram</FooterLink>
         </div>
       </div>
     </footer>
