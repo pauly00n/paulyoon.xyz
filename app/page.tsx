@@ -1,6 +1,3 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Mail } from "lucide-react";
 import Link from "next/link";
@@ -23,7 +20,7 @@ const bulletPoints = [
           <div className="relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-sm"></div>
             <Image
-              src="/profile-image.png"
+              src="/paulyoon.xyz/profile-image.png"
               alt="Paul Yoon"
               width={160}
               height={160}

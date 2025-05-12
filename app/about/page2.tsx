@@ -14,7 +14,7 @@ export default function Home() {
           <div className="relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-sm"></div>
             <Avatar className="h-40 w-40 border-4 border-background">
-              <AvatarImage src="/profile-image.png" alt="Paul Yoon" />
+              <AvatarImage src="/paulyoon.xyz/profile-image.png" alt="Paul Yoon" />
               <AvatarFallback>PY</AvatarFallback>
             </Avatar>
           </div>

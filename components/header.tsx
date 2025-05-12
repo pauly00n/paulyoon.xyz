@@ -61,7 +61,7 @@ export default function Header() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-4xl">
         <Link href="/" className="flex items-center gap-2 animate-fade-in">
           <Image 
-            src={useTheme().theme === 'dark' ? '/icon-dark.png' : '/icon-light.png'}
+            src={useTheme().theme === 'dark' ? '/paulyoon.xyz/icon-dark.png' : '/paulyoon.xyz/icon-light.png'}
             alt="PY Logo"
             width={32}
             height={32}
