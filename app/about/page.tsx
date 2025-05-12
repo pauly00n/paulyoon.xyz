@@ -14,7 +14,7 @@ export default function About() {
         {/* Hero Section */}
         <div className="flex justify-center">
           <Image 
-            src="/paulyoon.xyz/about-me-image.png" 
+            src="/about-me-image.png" 
             alt="Paul Yoon" 
             width={500}
             height={500}
