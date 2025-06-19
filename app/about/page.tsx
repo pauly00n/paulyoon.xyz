@@ -9,7 +9,7 @@ import Image from 'next/image';
 export default function About() { 
 
   return (
-    <div className="container mx-auto px-4 py-12 md:py-24 max-w-4xl animate-fade-in">
+    <div className="container mx-auto px-4 py-12 md:py-24 max-w-4xl animate-fade-in min-h-screen flex items-center">
       <section className="space-y-8">
         {/* Hero Section */}
         <div className="flex justify-center">
@@ -33,7 +33,7 @@ export default function About() {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
             My passion for building has existed since the first time I touched a Lego piece. I love creating things 
-            that I use for myself, such as my LaTeX/Obsidian studying workflow. I find Mathematics a fascinating puzzle, with
+            that I use for myself, such as my studying workflow and life organization systems. I find Mathematics a fascinating puzzle, with
             its structures and patterns found in any field I could dream of studying.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">

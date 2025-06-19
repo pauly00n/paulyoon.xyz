@@ -5,15 +5,8 @@ import Image from 'next/image';
 
 export default function Home() {
 
-const bulletPoints = [
-    "AI Agents for Cryptocurrency Tokenization (Project)",
-    "Deep Learning for Computer Vision (Course)",
-    "Mathematical Analysis beyond the Real Line (Course)",
-    "Applied Matrix Theory - Course",
-    // Add more bullet points here easily
-  ];
   return (
-    <div className="container mx-auto px-4 py-12 md:py-24 max-w-4xl animate-fade-in">
+    <div className="container mx-auto px-4 py-12 md:py-24 max-w-4xl animate-fade-in min-h-screen flex items-center">
       <section className="space-y-8">
         {/* Hero Section */}
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
@@ -34,9 +27,6 @@ const bulletPoints = [
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
                 Hi! I'm Paul Yoon.
               </h1>
-              <p className="text-xl text-muted-foreground">
-                Math Undergraduate at Stanford University
-              </p>
             </div>
             
           </div>
@@ -62,13 +52,17 @@ const bulletPoints = [
         </Card>
         
         <Card className="border border-border/40 bg-card/80 backdrop-blur-sm">
-          <CardContent className="p-5 space-y-4">
+          <CardContent className="p-5 space-y-2">
             <h2 className="text-2xl font-semibold tracking-tight">Currently Working On:</h2>   
-            {bulletPoints.map((point, index) => (
-              <p key={index} className="text-lg text-muted-foreground leading-relaxed">
-                • {point}
+            <div className="space-y-1 sm:space-y-3">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                • Full Stack Web Development at Hidden Studios, building an advertising platform for videogames 
               </p>
-            ))}
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                • Researcher at Stanford's Undergraduate Resesarch Institute in Mathematics <a href="https://surim.stanford.edu/" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >(SURIM)</a>
+              </p>
+              {/* Add more bullet points here easily */}
+            </div>
           </CardContent>
         </Card>
       </section>

@@ -5,15 +5,15 @@ export default function Footer() {
     <footer id="contact" className="bg-muted/40 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-12 text-sm text-muted-foreground">
-          <FooterLink href="https://x.com/asian1x">Twitter</FooterLink>
-          <div className="hidden sm:block h-4 w-[1px] bg-muted-foreground/25" />
           <FooterLink href="https://linkedin.com/in/pauljinyoon">LinkedIn</FooterLink>
-          <div className="hidden sm:block h-4 w-[1px] bg-muted-foreground/25" />
-          <FooterLink href="mailto:pauljy@stanford.edu">Email</FooterLink>
           <div className="hidden sm:block h-4 w-[1px] bg-muted-foreground/25" />
           <FooterLink href="https://github.com/pauly00n">Github</FooterLink>
           <div className="hidden sm:block h-4 w-[1px] bg-muted-foreground/25" />
-          <FooterLink href="https://instagram.com/asizns">Instagram</FooterLink>
+          <FooterLink href="mailto:pauljy@stanford.edu">Email</FooterLink>
+          <div className="hidden sm:block h-4 w-[1px] bg-muted-foreground/25" />
+          <FooterLink href="https://instagram.com/yoonivrsity">Instagram</FooterLink>
+          <div className="hidden sm:block h-4 w-[1px] bg-muted-foreground/25" />
+          <FooterLink href="https://x.com/asian1x">Twitter</FooterLink>
         </div>
       </div>
     </footer>

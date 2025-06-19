@@ -17,7 +17,13 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,9 +65,9 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-4xl">
-        <Link href="/" className="flex items-center gap-2 animate-fade-in">
+        <Link href="/" className="flex items-center gap-2 animate-fade-in" style={{marginLeft: '0'}}>
           <Image 
-            src={useTheme().theme === 'dark' ? '/icon-dark.png' : '/icon-light.png'}
+            src={mounted && theme === 'dark' ? '/icon-dark.png' : '/icon-light.png'}
             alt="PY Logo"
             width={32}
             height={32}
@@ -85,15 +91,15 @@ export default function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-48">
-              <DropdownMenuItem asChild>
-                <NavLink href="/" className="w-full">Home</NavLink>
+            <DropdownMenuContent className="w-8">
+              <DropdownMenuItem>
+                <NavLink href="/">Home</NavLink>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <NavLink href="/about" className="w-full">About</NavLink>
+              <DropdownMenuItem>
+                <NavLink href="/about">About</NavLink>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <NavLink href="/resume.pdf" className="w-full">Resume</NavLink>
+              <DropdownMenuItem>
+                <NavLink href="/resume.pdf">Resume</NavLink>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
