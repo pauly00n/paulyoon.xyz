@@ -53,11 +53,8 @@ export default function Home() {
         
         <Card className="border border-border/40 bg-card/80 backdrop-blur-sm">
           <CardContent className="p-5 space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight">Currently Working On:</h2>   
+            <h2 className="text-2xl font-semibold tracking-tight">Currently:</h2>   
             <div className="space-y-1 sm:space-y-3">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                • Full Stack Web Development at Hidden Studios, building an advertising platform for videogames 
-              </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 • Researcher at Stanford's Undergraduate Resesarch Institute in Mathematics <a href="https://surim.stanford.edu/" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >(SURIM)</a>
               </p>
