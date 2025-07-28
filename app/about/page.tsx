@@ -37,8 +37,8 @@ export default function About() {
             its structures and patterns found in any field I could dream of studying.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-            If I'm not locked in studying or building something, I'm probably either lifting weights, off campus trying 
-            a new restaurant, practicing the French Horn, hiking in nature, or watching a good Anime. 
+            If I'm not locked in studying or building something, I'm probably either climbing (terribly), lifting weights, off campus trying 
+            a new restaurant, practicing the French Horn, or watching a good Anime. 
             Feel free to reach out to me anytime about my interests or for anything else! 
             </p>
           </CardContent>
