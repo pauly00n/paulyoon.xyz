@@ -71,6 +71,7 @@ export default function Home() {
                 • Presenter at the <a href="https://snmmi.org" className="font-medium text-primary underline-offset-4 hover:underline transition-all">Society 
               of Nuclear Medicine and Molecular Imaging</a>
               </p>
+
             </div>
           </CardContent>
         </Card>
