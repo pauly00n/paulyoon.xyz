@@ -2,6 +2,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Mail } from "lucide-react";
 import Link from "next/link";
 import Image from 'next/image';
+import { FaPython, FaReact } from "react-icons/fa";
+import { SiGit, SiLatex, SiTypescript, SiJavascript, SiPandas, SiScikitlearn, SiPytorch, SiCplusplus, SiApachespark, SiJupyter, SiQt } from "react-icons/si";
+import { PiFileHtmlDuotone } from "react-icons/pi";
+import { TbBrandCpp, TbBrandReactNative } from "react-icons/tb";
+import { RiNextjsFill, RiSupabaseFill } from "react-icons/ri";
+import { VscVscode } from "react-icons/vsc";
 
 export default function Home() {
 
@@ -47,11 +53,11 @@ export default function Home() {
         
         <Card className="border border-border/40 bg-card/80 backdrop-blur-sm">
           <CardContent className="p-5 space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight">Currently:</h2>   
+            <h2 className="text-2xl font-semibold tracking-tight">Currently</h2>   
             <div className="space-y-1 sm:space-y-3">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                • Researcher at Stanford's Undergraduate Resesarch Institute in Mathematics <a href="https://surim.stanford.edu/" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >(SURIM)</a>
-              </p>
+                • Undergraduate Teaching Assistant for Stanford's <a href="https://bulletin.stanford.edu/courses/1172271" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >Math 19</a> Course
+              </p>             
             </div>
           </CardContent>
         </Card>
@@ -59,8 +65,11 @@ export default function Home() {
 
         <Card className="border border-border/40 bg-card/80 backdrop-blur-sm">
           <CardContent className="p-5 space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight">Previously:</h2>   
+            <h2 className="text-2xl font-semibold tracking-tight">Previously</h2>   
             <div className="space-y-1 sm:space-y-1">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                • Researcher at Stanford's Undergraduate Resesarch Institute in Mathematics <a href="https://surim.stanford.edu/" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >(SURIM)</a>
+              </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 • Data Science Intern at <a href="https://sundial.so" className="font-medium text-primary underline-offset-4 hover:underline transition-all">Sundial</a>
               </p>
@@ -73,6 +82,52 @@ export default function Home() {
               </p>
 
             </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border border-border/40 bg-card/80 backdrop-blur-sm">
+          <CardContent className="p-5 space-y-2">
+            <h2 className="text-2xl font-semibold tracking-tight">Skills</h2>   
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {/* Languages */}
+              <div>
+                <h3 className="text-lg font-medium mb-1">Languages</h3>
+                <div className="space-y-1">
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <FaPython/> Python</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiLatex/> LaTeX</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiTypescript/> JavaScript</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiJavascript/> TypeScript</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <PiFileHtmlDuotone/> HTML/CSS</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiCplusplus/> C++</p>
+                </div>
+              </div>
+
+              {/* Frameworks / Libraries */}
+              <div>
+                <h3 className="text-lg font-medium mb-1">Frameworks / Libraries</h3>
+                <div className="space-y-1">
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <FaReact/> React</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <TbBrandReactNative/> React Native</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <RiNextjsFill/> Next.js</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiPandas/> Pandas</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiScikitlearn/> Scikit-Learn</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiPytorch/> PyTorch</p>
+                </div>
+              </div>
+
+              {/* Developer Tools */}
+              <div>
+                <h3 className="text-lg font-medium mb-1">Developer Tools</h3>
+                <div className="space-y-1">
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiGit/> Git & Github</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <VscVscode/> VS Code</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiApachespark/> Apache Spark</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <RiSupabaseFill/> Supabase</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiJupyter/> Jupyter Notebook</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiQt/> Qt Creator</p>
+                </div>
+              </div>
+          </div>
           </CardContent>
         </Card>
       </section>
