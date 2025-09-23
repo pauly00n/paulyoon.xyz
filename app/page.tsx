@@ -95,8 +95,8 @@ export default function Home() {
                 <div className="space-y-1">
                   <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <FaPython/> Python</p>
                   <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiLatex/> LaTeX</p>
-                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiTypescript/> JavaScript</p>
-                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiJavascript/> TypeScript</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiJavascript/> JavaScript</p>
+                  <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiTypescript/> TypeScript</p>
                   <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <PiFileHtmlDuotone/> HTML/CSS</p>
                   <p className="text-muted-foreground leading-relaxed flex items-center gap-2"> <SiCplusplus/> C++</p>
                 </div>
