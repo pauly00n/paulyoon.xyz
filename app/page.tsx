@@ -19,7 +19,7 @@ export default function Home() {
           <div className="relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-sm"></div>
             <Image
-              src="/new-profile-image.JPG"
+              src="/new-profile-image2.JPG"
               alt="Paul Yoon"
               width={160}
               height={160}
