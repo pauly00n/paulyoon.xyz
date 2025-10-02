@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-24 max-w-4xl animate-fade-in min-h-screen flex items-center">
       <section className="space-y-4">
-        {/* Hero Section */}
+        {/* Hero */}
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
           <div className="relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-sm"></div>
@@ -38,15 +38,12 @@ export default function Home() {
           </div>
         </div>
         
-        {/* About Section */}
+        {/* About Blurb Shit Thing*/}
         <Card className="border border-border/40 bg-card/80 backdrop-blur-sm">
           <CardContent className="p-6 space-y-4">
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm an undergraduate at <span className="font-medium text-foreground">Stanford University</span> studying <span className="font-medium text-foreground">Mathematics</span>. 
               I strive to find meaning through my work, whether I'm building projects, conducting research, or learning new things. 
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              I love chatting with new people, so feel free to <a href="#contact" className="font-medium text-primary underline-offset-4 hover:underline transition-all">contact me!</a>
             </p>
           </CardContent>
         </Card>
@@ -89,7 +86,7 @@ export default function Home() {
           <CardContent className="p-5 space-y-2">
             <h2 className="text-2xl font-semibold tracking-tight">Skills</h2>   
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {/* Languages */}
+
               <div>
                 <h3 className="text-lg font-medium mb-1">Languages</h3>
                 <div className="space-y-1">
@@ -102,7 +99,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Frameworks / Libraries */}
               <div>
                 <h3 className="text-lg font-medium mb-1">Frameworks / Libraries</h3>
                 <div className="space-y-1">
@@ -115,7 +111,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Developer Tools */}
               <div>
                 <h3 className="text-lg font-medium mb-1">Developer Tools</h3>
                 <div className="space-y-1">

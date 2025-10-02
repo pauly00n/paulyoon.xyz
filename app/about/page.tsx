@@ -28,18 +28,13 @@ export default function About() {
           <CardContent className="p-6 space-y-4">
             <h2 className="text-2xl font-semibold tracking-tight">About Me:</h2>   
             <p className="text-lg text-muted-foreground leading-relaxed">
-            I was born in Boston, MA, lived in Houston, TX for 10 years, then moved to the Bay Area for high school.
-            I'll be at Stanford for the next ~3 years. I plan to graduate with a degree in Mathematics and a Masters in Computer Science.
+            I was born in Boston, MA, lived in Houston, TX for 10 years, then moved to the Bay Area for high school. I'll be at Stanford for the next ~3 years. I plan to graduate with a degree in Mathematics and a Masters in Computer Science.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-            My passion for building has existed since the first time I touched a Lego piece. I love creating things 
-            that I use for myself, such as my studying workflow and life organization systems. I find Mathematics a fascinating puzzle, with
-            its structures and patterns found in any field I could dream of studying.
+            My passion for building has existed since the first time I touched a Lego piece. I love creating things that I use for myself, such as my studying workflow and life organization systems. I find Mathematics a fascinating puzzle, with its structures and patterns found in any field I could dream of studying.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-            If I'm not locked in studying or building something, I'm probably either climbing (terribly), lifting weights, off campus trying 
-            a new restaurant, practicing the French Horn, or watching a good Anime. 
-            Feel free to reach out to me anytime about my interests or for anything else! 
+            If I'm not locked in studying or building something, you can catch me climbing (terribly), lifting weights, scootering around campus, or watching a good Anime. I've played the French Horn ever since 7th grade, and currently play in the <a href="https://web.stanford.edu/group/sso/cgi-bin/orchestras/orchestras/stanford-symphony-orchestra/" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >Stanford Symphony Orchestra</a>, studying under <a href="https://jesseclevenger.com" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >Jesse Clevenger</a>. I'm also a huge big back and would always love to try a new place off campus (you should add <a href="https://beliapp.co/app/asians" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >@asians</a> on beli). Feel free to reach out to me anytime about my interests or for anything else! 
             </p>
           </CardContent>
         </Card>
