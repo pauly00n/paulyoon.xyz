@@ -1,11 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink, Mail } from "lucide-react";
-import Link from "next/link";
 import Image from 'next/image';
 import { FaPython, FaReact } from "react-icons/fa";
 import { SiGit, SiLatex, SiTypescript, SiJavascript, SiPandas, SiScikitlearn, SiPytorch, SiCplusplus, SiApachespark, SiJupyter, SiQt } from "react-icons/si";
 import { PiFileHtmlDuotone } from "react-icons/pi";
-import { TbBrandCpp, TbBrandReactNative } from "react-icons/tb";
+import { TbBrandReactNative } from "react-icons/tb";
 import { RiNextjsFill, RiSupabaseFill } from "react-icons/ri";
 import { VscVscode } from "react-icons/vsc";
 
@@ -51,10 +49,14 @@ export default function Home() {
         <Card className="border border-border/40 bg-card/80 backdrop-blur-sm">
           <CardContent className="p-5 space-y-2">
             <h2 className="text-2xl font-semibold tracking-tight">Currently</h2>   
-            <div className="space-y-1 sm:space-y-3">
+            <div className="space-y-1 sm:space-y-1">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                • Undergraduate Teaching Assistant for Stanford's <a href="https://bulletin.stanford.edu/courses/1172271" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >Math 19</a> Course
-              </p>             
+                • Researcher at the Stanford Center for <a href="https://bulletin.stanford.edu/courses/1172271" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >Artificial Intelligence in Medicine &amp; Imaging</a>
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                • Teaching Assistant for Stanford's <a href="https://bulletin.stanford.edu/courses/1172271" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >Math 19</a> Course
+              </p>
+
             </div>
           </CardContent>
         </Card>
