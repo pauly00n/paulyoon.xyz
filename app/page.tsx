@@ -10,7 +10,7 @@ import { VscVscode } from "react-icons/vsc";
 export default function Home() {
 
   return (
-    <div className="container mx-auto px-4 py-12 md:py-24 max-w-4xl animate-fade-in min-h-screen flex items-center">
+    <div className="container mx-auto px-4 py-12 md:py-12 max-w-4xl animate-fade-in min-h-screen flex items-center">
       <section className="space-y-4">
         {/* Hero */}
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
