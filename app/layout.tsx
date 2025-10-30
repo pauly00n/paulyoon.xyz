@@ -12,10 +12,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Paul Yoon',
-  description: 'Stanford Mathematics Undergraduate',
-  icons: {
-    icon: '/favicon.png',
-  }
+  description: "Paul Yoon's Personal Website. He is an undergraduate at Stanford studying Mathematics and Computer Science.",
+    icons: [
+    { rel: 'icon', url: '/icon-light.png', media: '(prefers-color-scheme: light)' },
+    { rel: 'icon', url: '/icon-dark.png', media: '(prefers-color-scheme: dark)' },
+  ],
 };
 
 export default function RootLayout({

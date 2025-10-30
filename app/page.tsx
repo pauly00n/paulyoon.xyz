@@ -37,16 +37,17 @@ export default function Home() {
         </div>
         
         {/* About Blurb Shit Thing*/}
-        <Card className="border border-border/40 bg-card/80 backdrop-blur-sm">
+        <Card className="border border-border/40 bg-card/80">
           <CardContent className="p-6 space-y-4">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm an undergraduate at <span className="font-medium text-foreground">Stanford University</span> studying <span className="font-medium text-foreground">Mathematics</span>. 
+              I'm a third year undergraduate at <span className="font-medium text-foreground">Stanford University</span> studying <span className="font-medium text-foreground">Mathematics and Computer Science</span>.
               I strive to find meaning through my work, whether I'm building projects, conducting research, or learning new things. 
             </p>
           </CardContent>
         </Card>
         
-        <Card className="border border-border/40 bg-card/80 backdrop-blur-sm">
+        {/* Current Stuff */}
+        <Card className="border border-border/40 bg-card/80">
           <CardContent className="p-5 space-y-2">
             <h2 className="text-2xl font-semibold tracking-tight">Currently</h2>   
             <div className="space-y-1 sm:space-y-1">
@@ -54,14 +55,14 @@ export default function Home() {
                 • Researcher at the Stanford Center for <a href="https://aimi.stanford.edu/" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >Artificial Intelligence in Medicine &amp; Imaging</a>
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                • Teaching Assistant for Stanford's <a href="https://bulletin.stanford.edu/courses/1172271" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >Math 19</a> Course
+                • Teaching Assistant for Stanford's <a href="https://bulletin.stanford.edu/courses/1172271" className="font-medium text-primary underline-offset-4 hover:underline transition-all"> Intro to Calculus (MATH 19)</a>
               </p>
 
             </div>
           </CardContent>
         </Card>
 
-
+        {/* Former Stuff */}
         <Card className="border border-border/40 bg-card/80 backdrop-blur-sm">
           <CardContent className="p-5 space-y-2">
             <h2 className="text-2xl font-semibold tracking-tight">Previously</h2>   
@@ -84,6 +85,7 @@ export default function Home() {
           </CardContent>
         </Card>
 
+        {/* Skills */}
         <Card className="border border-border/40 bg-card/80 backdrop-blur-sm">
           <CardContent className="p-5 space-y-2">
             <h2 className="text-2xl font-semibold tracking-tight">Skills</h2>   
