@@ -51,7 +51,7 @@ export default function Home() {
             <h2 className="text-2xl font-semibold tracking-tight">Currently</h2>   
             <div className="space-y-1 sm:space-y-1">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                • Researcher at the Stanford Center for <a href="https://bulletin.stanford.edu/courses/1172271" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >Artificial Intelligence in Medicine &amp; Imaging</a>
+                • Researcher at the Stanford Center for <a href="https://aimi.stanford.edu/" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >Artificial Intelligence in Medicine &amp; Imaging</a>
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 • Teaching Assistant for Stanford's <a href="https://bulletin.stanford.edu/courses/1172271" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >Math 19</a> Course
