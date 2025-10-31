@@ -71,10 +71,14 @@ export default function Home() {
                 • Researcher at Stanford's Undergraduate Resesarch Institute in Mathematics <a href="https://surim.stanford.edu/" className="font-medium text-primary underline-offset-4 hover:underline transition-all" >(SURIM)</a>
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                • Data Science Intern at <a href="https://sundial.so" className="font-medium text-primary underline-offset-4 hover:underline transition-all">Sundial</a>
+                • Data Science Intern at <a href="https://sundial.so" className="font-medium text-primary underline-offset-4 hover:underline transition-all">Sundial</a>, building automated data insights
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                • Research Assistant at the <a href="https://med.stanford.edu" className="font-medium text-primary underline-offset-4 hover:underline transition-all">Stanford School of Medicine</a> for knee pain imaging
+                • Tutor at <a href="http://wunderlinglearning.com" className="font-medium text-primary underline-offset-4 hover:underline transition-all">Wunderling Learning</a>, for students with Learning Disabilities
+              </p>
+
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                • Research Assistant at the <a href="https://med.stanford.edu" className="font-medium text-primary underline-offset-4 hover:underline transition-all">Stanford School of Medicine</a>, for knee pain imaging
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 • Presenter at the <a href="https://snmmi.org" className="font-medium text-primary underline-offset-4 hover:underline transition-all">Society 
