@@ -16,7 +16,7 @@ export function HeroBackground() {
         style={{
           backgroundImage: "url('/noise.png')",
           backgroundRepeat: "repeat",
-          backgroundSize: "700px 700px",
+          backgroundSize: "128px 128px",
           opacity: 0.10,
           mixBlendMode: "normal",
         }}

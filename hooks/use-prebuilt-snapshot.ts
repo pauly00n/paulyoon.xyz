@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import type { BackdropSnapshot } from './use-backdrop-snapshot'
+import type { BackdropSnapshot, SnapshotStatus } from '@/types/backdrop-snapshot'
 
 // Bump this whenever you regenerate snapshots (npm run snapshot). It busts the
 // browser's force-cache for both the manifest and the PNGs without any manual
@@ -25,11 +25,10 @@ interface Manifest {
   snapshots: ManifestEntry[]
 }
 
-function pushDebug(state: string, extra?: object) {
+function pushDebug(status: SnapshotStatus) {
   if (typeof window === 'undefined') return
-  const s = { state, ...extra }
-  ;(window as any).__glasspillDebug = s
-  window.dispatchEvent(new CustomEvent('glasspill-debug', { detail: s }))
+  window.__glasspillDebug = status
+  window.dispatchEvent(new CustomEvent('glasspill-debug', { detail: status }))
 }
 
 export function usePrebuiltSnapshot(): BackdropSnapshot | null {
@@ -40,7 +39,7 @@ export function usePrebuiltSnapshot(): BackdropSnapshot | null {
 
     async function load() {
       const t0 = performance.now()
-      pushDebug('fetching-manifest')
+      pushDebug({ state: 'fetching-manifest' })
 
       let manifest: Manifest
       try {
@@ -48,7 +47,7 @@ export function usePrebuiltSnapshot(): BackdropSnapshot | null {
         if (!res.ok) throw new Error(`manifest ${res.status}`)
         manifest = await res.json()
       } catch (err) {
-        pushDebug('error', { message: 'manifest: ' + (err as Error).message })
+        pushDebug({ state: 'error', message: 'manifest: ' + (err as Error).message })
         return
       }
       if (cancelled) return
@@ -58,11 +57,11 @@ export function usePrebuiltSnapshot(): BackdropSnapshot | null {
         .slice()
         .sort((a, b) => Math.abs(a.docWidth - viewportW) - Math.abs(b.docWidth - viewportW))[0]
       if (!entry) {
-        pushDebug('error', { message: 'no snapshots in manifest' })
+        pushDebug({ state: 'error', message: 'no snapshots in manifest' })
         return
       }
 
-      pushDebug('loading-png', { entry })
+      pushDebug({ state: 'loading-png', entry })
       const img = new Image()
       img.crossOrigin = 'anonymous'
       try {
@@ -72,7 +71,7 @@ export function usePrebuiltSnapshot(): BackdropSnapshot | null {
           img.src = `${entry.file}?v=${SNAPSHOT_VERSION}`
         })
       } catch (err) {
-        pushDebug('error', { message: (err as Error).message })
+        pushDebug({ state: 'error', message: (err as Error).message })
         return
       }
       if (cancelled) return
@@ -84,7 +83,7 @@ export function usePrebuiltSnapshot(): BackdropSnapshot | null {
       canvas.height = padH
       const ctx = canvas.getContext('2d')
       if (!ctx) {
-        pushDebug('error', { message: '2d ctx unavailable' })
+        pushDebug({ state: 'error', message: '2d ctx unavailable' })
         return
       }
       ctx.drawImage(img, 0, 0, padW, padH)
@@ -101,7 +100,7 @@ export function usePrebuiltSnapshot(): BackdropSnapshot | null {
         heroHeight: entry.heroHeight,
       }
       console.log(`[glasspill] prebuilt ready in ${(performance.now() - t0).toFixed(0)}ms`, entry.file)
-      pushDebug('ready', { data: snap })
+      pushDebug({ state: 'ready', data: snap })
       setData(snap)
     }
 

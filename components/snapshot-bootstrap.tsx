@@ -7,7 +7,7 @@ export default function SnapshotBootstrap() {
     if (typeof window === 'undefined') return
     if (!window.location.search.includes('snapshot=1')) return
     import('@/lib/capture-backdrop').then(() => {
-      ;(window as any).__captureGlasspillReady = true
+      window.__captureGlasspillReady = true
     })
   }, [])
   return null

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import GlassPill, { GlassPillProps } from './glasspill'
-import GlassPillSafari from './glasspill-safari'
+import GlassPillSafari, { GlassPillSafariProps } from './glasspill-safari'
 import GlassPillSafari2 from './glasspill-safari2'
 
 function isSafariBrowser() {
@@ -26,6 +26,6 @@ export default function GlassPillAuto(props: GlassPillProps) {
   }, [])
 
   if (mode === 'safari-mobile') return <GlassPillSafari2 {...props} />
-  if (mode === 'safari-desktop') return <GlassPillSafari {...(props as any)} />
+  if (mode === 'safari-desktop') return <GlassPillSafari {...(props as GlassPillSafariProps)} />
   return <GlassPill {...props} />
 }

@@ -30,23 +30,31 @@ export function MobileSlideFit() {
         }
         return
       }
-      // pass 1 — lay each slide out at the canvas width, natural height, and
-      // record the tallest
+      // pass 1 — collect every layout read before mutating slide styles
       const items: { tile: HTMLElement; sec: HTMLElement; tileW: number }[] = []
-      let maxH = 0
       for (const tile of list) {
         const sec = tile.firstElementChild as HTMLElement | null
         if (!sec) continue
         const tileW = tile.clientWidth
         if (!tileW) continue // hidden (e.g. contact sheet)
+        items.push({ tile, sec, tileW })
+      }
+
+      // pass 2 — writes only: lay every slide out at the fixed canvas width
+      for (const { sec } of items) {
         sec.style.width = `${CANVAS_W}px`
         sec.style.minHeight = "0px"
         sec.style.height = "auto"
         sec.style.transform = "none"
-        maxH = Math.max(maxH, sec.offsetHeight) // offsetHeight ignores transform
-        items.push({ tile, sec, tileW })
       }
-      // pass 2 — give every slide the uniform canvas height and scale to fit
+
+      // pass 3 — reads only: one layout flush, then measure every natural height
+      let maxH = 0
+      for (const { sec } of items) {
+        maxH = Math.max(maxH, sec.offsetHeight) // offsetHeight ignores transform
+      }
+
+      // pass 4 — writes only: set the uniform height and final scale
       const uniformH = Math.round(maxH * HEIGHT_FACTOR)
       for (const { tile, sec, tileW } of items) {
         const scale = tileW / CANVAS_W

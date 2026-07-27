@@ -40,7 +40,11 @@ export function DeckKeyNav() {
     const goTo = (i: number) => {
       const ps = panels()
       const clamped = Math.max(0, Math.min(ps.length - 1, i))
-      ps[clamped]?.scrollIntoView({ behavior: "smooth", block: "center" })
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ps[clamped]?.scrollIntoView({
+        behavior: reduceMotion ? "auto" : "smooth",
+        block: "center",
+      })
     }
 
     const onKey = (e: KeyboardEvent) => {

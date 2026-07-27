@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Github, Mail, Linkedin, Twitter } from "lucide-react"
 import GlassButton2 from "@/components/ui/glassbutton2"
 
@@ -18,18 +18,69 @@ const SEQUENCE = [0, 1, 2, 3, 2, 1]
 
 export function ButtonRow() {
   const [tick, setTick] = useState(0)
+  const rowRef = useRef<HTMLDivElement>(null)
   const active = SEQUENCE[tick % SEQUENCE.length]
 
   useEffect(() => {
-    const id = setInterval(() => setTick(t => t + 1), 2000)
-    return () => clearInterval(id)
+    const el = rowRef.current
+    if (!el) return
+
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)")
+    let id: number | undefined
+    let inView = false
+    let focusWithin = el.contains(document.activeElement)
+    let reduceMotion = motion.matches
+
+    const sync = () => {
+      const shouldRun = inView && !document.hidden && !focusWithin && !reduceMotion
+      if (shouldRun && id === undefined) {
+        id = window.setInterval(() => setTick(t => t + 1), 2000)
+      } else if (!shouldRun && id !== undefined) {
+        window.clearInterval(id)
+        id = undefined
+      }
+    }
+
+    const io = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting
+      sync()
+    })
+    const onFocusIn = () => {
+      focusWithin = true
+      sync()
+    }
+    const onFocusOut = (event: FocusEvent) => {
+      const next = event.relatedTarget
+      if (next instanceof Node && el.contains(next)) return
+      focusWithin = false
+      sync()
+    }
+    const onMotionChange = (event: MediaQueryListEvent) => {
+      reduceMotion = event.matches
+      sync()
+    }
+
+    io.observe(el)
+    el.addEventListener("focusin", onFocusIn)
+    el.addEventListener("focusout", onFocusOut)
+    document.addEventListener("visibilitychange", sync)
+    motion.addEventListener("change", onMotionChange)
+
+    return () => {
+      io.disconnect()
+      el.removeEventListener("focusin", onFocusIn)
+      el.removeEventListener("focusout", onFocusOut)
+      document.removeEventListener("visibilitychange", sync)
+      motion.removeEventListener("change", onMotionChange)
+      if (id !== undefined) window.clearInterval(id)
+    }
   }, [])
 
   const STEP = W + GAP
   const CONTAINER_W = W * 5 + GAP * 4
 
   return (
-    <div className="mt-10 flex justify-center">
+    <div ref={rowRef} className="mt-10 flex justify-center">
       <div style={{ position: "relative", width: CONTAINER_W, height: W }}>
         {SOCIALS.map((social, i) => {
           const isActive = i === active

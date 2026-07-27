@@ -258,7 +258,9 @@ export function Projects() {
         {/* Mobile: 1-col stack (unchanged). Desktop: bento 6-col grid. */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-6 md:gap-x-5 md:gap-y-3 md:auto-rows-[240px]">
           {projects.map((project, idx) => {
-            const primaryUrl = project.liveUrl || project.githubUrl || "#"
+            const primaryUrl = project.liveUrl || project.githubUrl
+            const CardShell = primaryUrl ? "a" : "div"
+            const isExternal = primaryUrl ? !primaryUrl.startsWith("/") : false
             const isCardActive = isMobile && activeIdx === idx
             // Short bento cards (row-span-1) get a compact overlay variant on desktop
             // since the full overlay (title + description + tags) overflows their height.
@@ -273,10 +275,15 @@ export function Projects() {
               >
 
                 {/* Image card */}
-                <a
-                  href={primaryUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <CardShell
+                  {...(primaryUrl
+                    ? {
+                        href: primaryUrl,
+                        ...(isExternal
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {}),
+                      }
+                    : {})}
                   className="relative block aspect-[4/3] md:aspect-auto md:flex-1 md:min-h-0 overflow-hidden rounded-2xl"
                   style={CARD_BG}
                 >
@@ -349,7 +356,7 @@ export function Projects() {
                       </p>
                     </div>
                   )}
-                </a>
+                </CardShell>
 
                 {/* Below-card row */}
                 <div className="mt-4 flex items-center justify-between">
@@ -376,8 +383,9 @@ export function Projects() {
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        {...(!project.liveUrl.startsWith("/")
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
                         className="text-muted-foreground/60 hover:text-foreground transition-colors"
                         aria-label={`${project.title} live`}
                       >

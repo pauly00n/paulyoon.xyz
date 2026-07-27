@@ -8,7 +8,7 @@ import React, {
   useState,
 } from 'react'
 import { cn, hexToRgb } from '@/lib/utils'
-import { BackdropSnapshot } from '@/hooks/use-backdrop-snapshot'
+import type { BackdropSnapshot } from '@/types/backdrop-snapshot'
 import { usePrebuiltSnapshot } from '@/hooks/use-prebuilt-snapshot'
 import GlassPill, { GlassPillProps } from './glasspill'
 import {
@@ -300,7 +300,8 @@ function WebGLGlassPill({
     let raf = 0
     let loggedOnce = false
     const liveHeroEl = document.querySelector('.hero') as HTMLElement | null
-    const render = () => {
+    const draw = () => {
+      raf = 0
       const rect = container.getBoundingClientRect()
       const liveDocW = Math.max(
         document.body.scrollWidth,
@@ -331,22 +332,41 @@ function WebGLGlassPill({
         loggedOnce = true
         const msg = `live ${liveDocW}x${liveDocH} hero ${liveHeroH} | snap ${snapshot.docWidth}x${snapshot.docHeight} hero ${snapHeroH} | pillY ${liveY.toFixed(0)}→${snapY.toFixed(0)}`
         console.log('[glasspill]', msg)
-        ;(window as any).__glasspillAlign = msg
+        window.__glasspillAlign = msg
         window.dispatchEvent(new CustomEvent('glasspill-align', { detail: msg }))
       }
-      const offsetY = (window as any).__glasspillOffsetY ?? 30
+      const offsetY = window.__glasspillOffsetY ?? 30
       const ox = (rect.left + window.scrollX) * xScale + snapshot.padX
       const oy = snapY + offsetY + snapshot.padY
       gl.uniform2f(uOrigin, ox, oy)
       gl.clearColor(0, 0, 0, 0)
       gl.clear(gl.COLOR_BUFFER_BIT)
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
-      raf = requestAnimationFrame(render)
     }
-    render()
+    const schedule = () => {
+      if (!raf) raf = requestAnimationFrame(draw)
+    }
+    const onPointerMove = (event: PointerEvent) => {
+      if (event.buttons !== 0 || event.pressure > 0) schedule()
+    }
+    const onVisibilityChange = () => {
+      if (!document.hidden) schedule()
+    }
+
+    draw()
+    window.addEventListener('scroll', schedule, { passive: true })
+    document.addEventListener('scroll', schedule, { capture: true, passive: true })
+    window.addEventListener('resize', schedule)
+    document.addEventListener('pointermove', onPointerMove, { passive: true })
+    document.addEventListener('visibilitychange', onVisibilityChange)
 
     return () => {
-      cancelAnimationFrame(raf)
+      if (raf) cancelAnimationFrame(raf)
+      window.removeEventListener('scroll', schedule)
+      document.removeEventListener('scroll', schedule, true)
+      window.removeEventListener('resize', schedule)
+      document.removeEventListener('pointermove', onPointerMove)
+      document.removeEventListener('visibilitychange', onVisibilityChange)
       gl.deleteTexture(backdropTex)
       gl.deleteTexture(profileTex)
       gl.deleteTexture(specTex)

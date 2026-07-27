@@ -190,11 +190,42 @@ export default function GlassPill({
 }: GlassPillProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [size, setSize]   = useState({ width: 0, height: 0 })
+  const { width, height } = size
   const reactId  = useId()
-  const filterId = useMemo(
-    () => `glass-pill-filter-${reactId.replace(/[:]/g, '')}`,
-    [reactId]
-  )
+  const filterId = useMemo(() => {
+    const base = reactId.replace(/[:]/g, '')
+    const signature = [
+      width,
+      height,
+      borderRadius,
+      glassThickness,
+      bezelWidth,
+      refractiveIndex,
+      scaleRatio,
+      surfaceFn,
+      blurAmount,
+      specularOpacity,
+      specularSaturation,
+    ].join('-')
+    let hash = 0
+    for (let i = 0; i < signature.length; i++) {
+      hash = (hash * 31 + signature.charCodeAt(i)) | 0
+    }
+    return `glass-pill-filter-${base}-${(hash >>> 0).toString(36)}`
+  }, [
+    reactId,
+    width,
+    height,
+    borderRadius,
+    glassThickness,
+    bezelWidth,
+    refractiveIndex,
+    scaleRatio,
+    surfaceFn,
+    blurAmount,
+    specularOpacity,
+    specularSaturation,
+  ])
 
   // measure container via ResizeObserver — use offsetWidth/Height (border box, includes padding)
   useEffect(() => {
@@ -206,8 +237,6 @@ export default function GlassPill({
     ro.observe(el)
     return () => ro.disconnect()
   }, [])
-
-  const { width, height } = size
 
   const [maps, setMaps] = useState<{ dispUrl: string; specUrl: string; scale: number } | null>(null)
 
@@ -265,14 +294,14 @@ export default function GlassPill({
               colorInterpolationFilters="sRGB"
             >
               <feGaussianBlur in="SourceGraphic" stdDeviation={blurAmount} result="blurred_source" />
-              <feImage href={maps.dispUrl} x="0" y="0" width={width} height={height} result="disp_map" />
+              <feImage key={maps.dispUrl} href={maps.dispUrl} x="0" y="0" width={width} height={height} result="disp_map" />
               <feDisplacementMap
                 in="blurred_source" in2="disp_map"
                 scale={maps.scale} xChannelSelector="R" yChannelSelector="G"
                 result="displaced"
               />
               <feColorMatrix in="displaced" type="saturate" values={String(specularSaturation)} result="displaced_sat" />
-              <feImage href={maps.specUrl} x="0" y="0" width={width} height={height} result="spec_layer" />
+              <feImage key={maps.specUrl} href={maps.specUrl} x="0" y="0" width={width} height={height} result="spec_layer" />
               <feComposite in="displaced_sat" in2="spec_layer" operator="in" result="spec_masked" />
               <feComponentTransfer in="spec_layer" result="spec_faded">
                 <feFuncA type="linear" slope={specularOpacity} />

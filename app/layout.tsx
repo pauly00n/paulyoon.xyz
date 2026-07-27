@@ -9,6 +9,7 @@ const _playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playf
 const _stix = STIX_Two_Text({ subsets: ["latin"], variable: "--font-stix", display: "swap" });
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://paulyoon.xyz').replace(/\/$/, '')
 const ogImageUrl = `${siteUrl}/og-image2.png`
+const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, '\\u003c')
 
 export const viewport: Viewport = {
   themeColor: '#e0f1f9',
@@ -64,7 +65,7 @@ export default function RootLayout({
                     id="schema-person"
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
+                        __html: serializeJsonLd({
                             "@context": "https://schema.org",
                             "@type": "Person",
                             "name": "Paul Yoon",
@@ -80,7 +81,7 @@ export default function RootLayout({
                     id="schema-website"
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
+                        __html: serializeJsonLd({
                             "@context": "https://schema.org",
                             "@type": "WebSite",
                             "name": "Paul Yoon",

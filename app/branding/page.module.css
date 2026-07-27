@@ -31,7 +31,7 @@
   mix-blend-mode: screen;
   pointer-events: none;
   background-image: url("/noise.png");
-  background-size: 700px 700px;
+  background-size: 128px 128px;
   position: fixed;
   inset: 0;
 }
@@ -58,7 +58,7 @@
   mix-blend-mode: multiply;
   pointer-events: none;
   background-image: url("/noise.png");
-  background-size: 700px 700px;
+  background-size: 128px 128px;
   position: absolute;
   inset: 0;
 }

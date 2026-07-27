@@ -66,10 +66,10 @@ async function main() {
     await new Promise(res => setTimeout(res, 2000))
 
     const result = await page.evaluate(async () => {
-      // @ts-ignore
+      // @ts-expect-error -- snapshot bootstrap adds this browser-only hook
       const r = await window.__captureGlasspill()
       const hero = document.querySelector('.hero')
-      // @ts-ignore
+      // @ts-expect-error -- metadata is extended with the measured hero height
       r.meta.heroHeight = hero ? hero.offsetHeight : 0
       return r
     })
